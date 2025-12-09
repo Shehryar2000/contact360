@@ -30,39 +30,40 @@
 
 			</div>
 			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">ID#</th>
+								<th scope="col">Name</th>
+								<th scope="col">Email</th>
+								<th scope="col">Phone</th>
+								<th scope="col">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="c : ${contacts}">
+								<th scope="row" th:text="${c.id}">1</th>
+								<td><img alt="profilePhoto" th:src="@{'/img/'+${c.image}}"
+									class="profile-photo"> <span
+									th:text="${c.fName + ' ' + c.lName}"></span></td>
+								<td><a th:href="@{'/user/'+${c.id}+'/contact'}"> <span
+										th:text="${c.email}"></span>
+								</a></td>
+								<td th:text="${c.phone}">@mdo</td>
 
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">ID#</th>
-							<th scope="col">Name</th>
-							<th scope="col">Email</th>
-							<th scope="col">Phone</th>
-							<th scope="col">Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="c : ${contacts}">
-							<th scope="row" th:text="${c.id}">1</th>
-							<td><img alt="profilePhoto" th:src="@{'/img/'+${c.image}}"
-								class="profile-photo"> <span th:text="${c.fName + ' ' + c.lName}"></span>
-							</td>
-							<td><a th:href="@{'/user/'+${c.id}+'/contact'}"> <span
-									th:text="${c.email}"></span>
-							</a></td>
-							<td th:text="${c.phone}">@mdo</td>
+								<td class="d-flex align-items-center"><a
+									th:onclick="|deleteContact(${c.id})|"
+									class="btn btn-danger btn-sm me-2">Delete</a>
 
-							<td class="d-flex align-items-center"><a
-								th:onclick="|deleteContact(${c.id})|"
-								class="btn btn-danger btn-sm me-2">Delete</a>
-
-								<form th:action="@{'/user/update-contact/'+${c.id}}"
-									method="post" class="m-0">
-									<button class="btn btn-warning btn-sm" type="submit">Update</button>
-								</form></td>
-						</tr>
-					</tbody>
-				</table>
+									<form th:action="@{'/user/update-contact/'+${c.id}}"
+										method="post" class="m-0">
+										<button class="btn btn-warning btn-sm" type="submit">Update</button>
+									</form></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 
 				<!-- Pagination -->
 
@@ -89,6 +90,16 @@
 			</div>
 
 		</div>
+
+		<script>
+			$(document).ready(() => {
+				$('.item').removeClass('active');
+				$('.custom-icon').removeClass('active');
+
+				$('#show-link').addClass('active');
+				$('#show-link-icon').addClass('active');
+			});
+		</script>
 
 	</section>
 

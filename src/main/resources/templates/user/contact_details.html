@@ -29,35 +29,37 @@
 
 			<div class="card-body">
 
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">ID</th>
-							<th scope="col"><span th:text="${contact.id}"></span></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">Name</th>
-							<td><span th:text="${contact.fName + ' ' + contact.lName}"></span></td>
-						</tr>
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col"><span th:text="${contact.id}"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Name</th>
+								<td><span th:text="${contact.fName + ' ' + contact.lName}"></span></td>
+							</tr>
 
-						<tr>
-							<th scope="row">Email</th>
-							<td><span th:text="${contact.email}"></span></td>
-						</tr>
+							<tr>
+								<th scope="row">Email</th>
+								<td><span th:text="${contact.email}"></span></td>
+							</tr>
 
-						<tr>
-							<th scope="row">Phone</th>
-							<td><span th:text="${contact.phone}"></span></td>
-						</tr>
+							<tr>
+								<th scope="row">Phone</th>
+								<td><span th:text="${contact.phone}"></span></td>
+							</tr>
 
-						<tr>
-							<th scope="row">Profession</th>
-							<td><span th:text="${contact.work}"></span></td>
-						</tr>
-					</tbody>
-				</table>
+							<tr>
+								<th scope="row">Profession</th>
+								<td><span th:text="${contact.work}"></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 
 				<div class="description mt-3">
 					<th:block th:utext="${contact.description}"></th:block>

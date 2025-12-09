@@ -16,6 +16,8 @@
 	integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <link th:rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -52,15 +54,18 @@
 	<div class="sidebar">
 
 		<span onclick="toggleSidebar()" class="crossBtn">&times;</span> <a
-			href="#" th:href="@{/user/dashboard}" class="item"><i
-			class="fa fa-home custom-icon" aria-hidden="true"></i> Home</a> <a
-			href="#" th:href="@{/user/show-contact/0}" class="item"><i
-			class="fa fa-id-card-alt custom-icon" aria-hidden="true"></i> View
-			Contacts</a> <a href="#" th:href="@{/user/add-contact}" class="item"><i
+			id="home-link" th:href="@{/user/dashboard}" class="item"><i
+			id="home-link-icon" class="fa fa-home custom-icon" aria-hidden="true"></i>
+			Home</a> <a id="show-link" th:href="@{/user/show-contact/0}" class="item"><i
+			id="show-link-icon" class="fa fa-id-card-alt custom-icon"
+			aria-hidden="true"></i> View Contacts</a> <a id="add-link"
+			th:href="@{/user/add-contact}" class="item"><i id="add-link-icon"
 			class="fa fa-pencil-alt custom-icon" aria-hidden="true"></i> Add
-			Contact</a> <a href="#" th:href="@{/user/profile}" class="item"><i
-			class="fa fa-user-circle custom-icon" aria-hidden="true"></i> Profile</a>
-		<a href="#" class="item"><i class="fa fa-cogs custom-icon"
+			Contact</a> <a id="profile-link" th:href="@{/user/profile}" class="item"><i
+			id="profile-link-icon" class="fa fa-user-circle custom-icon"
+			aria-hidden="true"></i> Profile</a> <a id="setting-link"
+			th:href="@{/user/settings}" class="item"><i
+			id="setting-link-icon" class="fa fa-cogs custom-icon"
 			aria-hidden="true"></i> Setting</a> <a href="#" th:href="@{/logout}"
 			class="item"><i class="fa fa-sign-out custom-icon"
 			aria-hidden="true"></i> Logout</a>
@@ -80,10 +85,9 @@
 		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
 		crossorigin="anonymous"></script>
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<script th:src="@{/js/script.js}"></script>
+	<script src="https://js.stripe.com/v3/"></script>
 </body>
 </html>

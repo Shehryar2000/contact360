@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	th:replace="user/base::layout(~{::section})">
+
 <head>
 <meta charset="UTF-8" />
 <title>Homepage</title>
 </head>
+
 <body>
 
 	<section>
-
 
 		<div class="container">
 			<div class="card text-center">
@@ -29,13 +30,33 @@
 
 					<a th:href="@{/user/add-contact}" class="btn btn-bg-primary my-3"
 						style="width: 180px;">Start Now</a>
+					<hr>
+
+					<h3 class="my-2">Donation</h3>
+					<input id="payment" type="number" class="form-control my-3"
+						placeholder="Enter donation amount" />
+					<div class="container text-center my-3">
+						<button class="btn btn-bg-primary w-100" th:onclick="paymentStart()">Pay Now</button>
+					</div>
 
 
 				</div>
 
 			</div>
 		</div>
+
+		<script>
+			$(document).ready(() => {
+				$('.item').removeClass('active');
+				$('.custom-icon').removeClass('active');
+
+				$('#home-link').addClass('active');
+				$('#home-link-icon').addClass('active');
+			});
+		</script>
+
 	</section>
 
 </body>
+
 </html>

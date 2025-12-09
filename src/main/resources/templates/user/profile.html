@@ -29,42 +29,43 @@
 			</div>
 
 			<div class="card-body mx-3">
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col"><span th:text="${user.id}"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Name</th>
+								<td><span th:text="${user.name}"></span></td>
+							</tr>
 
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">ID</th>
-							<th scope="col"><span th:text="${user.id}"></span></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">Name</th>
-							<td><span th:text="${user.name}"></span></td>
-						</tr>
+							<tr>
+								<th scope="row">Email</th>
+								<td><span th:text="${user.email}"></span></td>
+							</tr>
 
-						<tr>
-							<th scope="row">Email</th>
-							<td><span th:text="${user.email}"></span></td>
-						</tr>
+							<tr>
+								<th scope="row">Active Status</th>
+								<td><span th:text="${user.status}"></span></td>
+							</tr>
 
-						<tr>
-							<th scope="row">Active Status</th>
-							<td><span th:text="${user.status}"></span></td>
-						</tr>
+							<tr>
+								<th scope="row">Role</th>
+								<td><span th:text="${user.role}"></span></td>
+							</tr>
 
-						<tr>
-							<th scope="row">Role</th>
-							<td><span th:text="${user.role}"></span></td>
-						</tr>
+							<tr>
+								<th scope="row">About</th>
+								<td><span th:utext="${user.about}"></span></td>
+							</tr>
 
-						<tr>
-							<th scope="row">About</th>
-							<td><span th:utext="${user.about}"></span></td>
-						</tr>
-
-					</tbody>
-				</table>
+						</tbody>
+					</table>
+				</div>
 
 			</div>
 
@@ -83,6 +84,16 @@
 			</div>
 
 		</div>
+
+		<script>
+			$(document).ready(() => {
+				$('.item').removeClass('active');
+				$('.custom-icon').removeClass('active');
+
+				$('#profile-link').addClass('active');
+				$('#profile-link-icon').addClass('active');
+			});
+		</script>
 
 	</section>
 

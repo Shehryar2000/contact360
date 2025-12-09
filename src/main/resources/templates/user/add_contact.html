@@ -99,8 +99,9 @@
 								<!-- Description -->
 
 								<div class="input-group mt-3">
-									<textarea th:field="*{description}" id="desc" class="form-control"
-										rows="10" placeholder="Enter contact description"></textarea>
+									<textarea th:field="*{description}" id="desc"
+										class="form-control" rows="10"
+										placeholder="Enter contact description"></textarea>
 								</div>
 
 								<!-- Image -->
@@ -137,6 +138,16 @@
         selector: '#descriptions'
       });
     </script>
+
+		<script>
+			$(document).ready(() => {
+				$('.item').removeClass('active');
+				$('.custom-icon').removeClass('active');
+
+				$('#add-link').addClass('active');
+				$('#add-link-icon').addClass('active');
+			});
+		</script>
 
 	</section>
 
