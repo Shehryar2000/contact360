@@ -39,7 +39,7 @@ public class EmailService {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				// TODO Auto-generated method stub
-				return new PasswordAuthentication(from, "sipfkhduinezjayy");
+				return new PasswordAuthentication(from, "emailkey");
 			}
 
 		});
